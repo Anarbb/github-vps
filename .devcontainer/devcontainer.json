@@ -1,0 +1,45 @@
+{
+  "name": "Kali Linux VPS (GitHub Codespaces)",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "runArgs": [
+    "--privileged",
+    "--init"
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/desktop-lite:1": {
+      "password": "kali",
+      "webPort": 6080,
+      "vncPort": 5901
+    }
+  },
+  "forwardPorts": [6080, 5901],
+  "portsAttributes": {
+    "6080": {
+      "label": "noVNC Desktop (Web)",
+      "onAutoForward": "openBrowser"
+    },
+    "5901": {
+      "label": "VNC Server",
+      "onAutoForward": "silent"
+    }
+  },
+  "remoteUser": "kali",
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "README.md"
+      ]
+    },
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": [
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
+  "postCreateCommand": "bash scripts/post-create.sh"
+}

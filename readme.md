@@ -24,7 +24,35 @@
 <br>
 <br>
 
+<p align="center">
+  <a href="https://codespaces.new/Anarbb/github-vps">
+    <img src="https://github.com/codespaces/badge.svg" alt="Open in GitHub Codespaces" height="38">
+  </a>
+</p>
+
 ![neofetch](assets/neofetch.png)
+
+## ⚡ 1-Click Cloud Launch (GitHub Codespaces)
+
+Click the button above to launch an instant Kali Linux cloud environment directly in GitHub Codespaces:
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Anarbb/github-vps)
+
+### What's Configured Out of the Box:
+- **Kali Linux Rolling:** Complete with non-root user `kali` (password `kali`) and passwordless `sudo`.
+- **Privileged Mode (`--privileged`):** Preconfigured for TUN/TAP devices and OpenVPN (`tun0`) connections (TryHackMe / HackTheBox).
+- **Web Desktop via noVNC:** Graphical desktop available automatically on port **6080** via browser.
+- **Modular Tool Bundles:**
+  ```bash
+  bash scripts/install-tools.sh top10     # Top 10 pentest tools (nmap, hydra, john, etc.)
+  bash scripts/install-tools.sh web       # Web tools (nikto, sqlmap, gobuster, ffuf)
+  bash scripts/install-tools.sh passwords # Password cracking & wordlists
+  bash scripts/install-tools.sh headless  # Full Kali headless metapackage
+  ```
+- **CLI / SSH Connection:**
+  ```bash
+  gh codespace ssh -R Anarbb/github-vps
+  ```
 
 ## 📜 Description 
 GitHub Codespaces allows developers and hackers to create and utilize their coding environments directly from GitHub in the cloud. As a CTF player or pentester, you can also leverage GitHub Codespaces similarly to a VPS (Virtual Private Server). This makes it easy to work on projects from anywhere with the flexibility of a portable development setup using Docker.
