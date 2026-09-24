@@ -3,6 +3,10 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
+  "containerEnv": {
+    "VNC_RESOLUTION": "1920x1080x24",
+    "VNC_DPI": "96"
+  },
   "runArgs": [
     "--privileged",
     "--init"
@@ -17,7 +21,7 @@
   "forwardPorts": [6080, 5901],
   "portsAttributes": {
     "6080": {
-      "label": "noVNC Desktop (Web)",
+      "label": "Kali XFCE Desktop (noVNC)",
       "onAutoForward": "openBrowser"
     },
     "5901": {
